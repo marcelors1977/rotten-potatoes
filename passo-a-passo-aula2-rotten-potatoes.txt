@@ -1,0 +1,39 @@
+criando image
+
+1 - criar Dockerfile
+
+2 - gerar imagem
+
+	docker build -t 19061977/rotten-potatoes:v1 .
+
+	docker push 19061977/rotten-potatoes:v1
+
+	docker tag 19061977/rotten-potatoes:v1 19061977/rotten-potatoes:latest
+
+	docker push 19061977/rotten-potatoes:latest
+
+// Criando manifestos para subir o Mong DB
+3 - criar arquivo de manifesto deployment.yaml
+
+4 - subir deployment
+
+	kubectl apply -f ./k8s/mongodb/deployment.yaml
+	
+5 - criar manifesto service.yaml
+
+6 - subir service
+
+	kubectl apply -f ./k8s/mongodb/service.yaml
+
+// Criando manifestos para subir a aplicação rotten-potatoes
+7 - criar manifesto do pod movies
+
+8 - subir o pod movies-deployment
+
+	kubectl apply -f ./k8s/web/deployment.yaml
+	
+9 - Criar o manifesto service a aplicação rotten-potatoes
+
+10 - subir service referente a aplicação rotten-potatoes
+
+	kubectl apply -f ./k8s/web/service.yaml
