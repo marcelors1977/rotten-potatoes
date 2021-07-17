@@ -34,6 +34,8 @@ criando image
 	
 9 - Criar o manifesto service a aplicação rotten-potatoes
 
+
+
 10 - subir service referente a aplicação rotten-potatoes
 
 	kubectl apply -f ./k8s/web/service.yaml
